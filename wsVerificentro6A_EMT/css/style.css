@@ -1,0 +1,82 @@
+﻿
+body{
+    margin: 0;
+}
+header{
+    background: #2c3e50;
+    background-color: rgb(164, 157, 201);
+}
+
+.main{
+    background-color: rgb(164, 157, 201);
+}
+
+.color1{
+    background: #34495e;
+    color: #fff;
+}
+
+aside{
+    background: #000;
+    color: #fff;
+}
+.aside{
+    background-color: rgb(164, 157, 201);
+}
+footer{
+    background-color: rgb(60, 226, 222);
+    color: #000;
+    text-align: center;
+}
+
+article{
+    background: #f2f2f2;
+}
+.logo{
+    width: 150px;
+    height: 150px;
+}
+.profile-photo{
+    width: 80px;
+    height: 80px;
+}
+.back-color{
+    background-color: rgb(164, 157, 201);
+    color: #fff;
+}
+.links-pages a{
+    color: #fff;
+}
+.ico{
+    font-size: x-large;
+}
+.ico a{
+    color: #000;
+}
+.menu-main{
+    text-align: center;
+}
+.nav{
+    padding-left: 40%;
+}
+h2{
+    margin: auto;
+    margin-top: -100px;
+}
+.content-principal{
+    margin: auto;
+    margin-top: -10px;
+
+}
+.all-page{
+    padding-top: 20px
+}
+.content-editor{
+    text-align: justify;
+    padding: 30px;
+    margin: auto;
+    margin-top: -10px;
+}
+.info-list{
+    color: #fff;
+}

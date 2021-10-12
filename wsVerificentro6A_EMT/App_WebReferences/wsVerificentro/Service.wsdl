@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="vwVehiculo">
+        <s:complexType />
+      </s:element>
+      <s:element name="vwVehiculoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vwVehiculoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vwRptVehiculoPropietario">
+        <s:complexType />
+      </s:element>
+      <s:element name="vwRptVehiculoPropietarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vwRptVehiculoPropietarioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="spQryVehiculo">
+        <s:complexType />
+      </s:element>
+      <s:element name="spQryVehiculoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="spQryVehiculoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="spRptVehiculoPropietarioFiltrado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="marcaFiltrado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="spRptVehiculoPropietarioFiltradoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="spRptVehiculoPropietarioFiltradoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="spInsVehiculoValidado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="matricula" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="modelo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="marca" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="propietario" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="spInsVehiculoValidadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="spInsVehiculoValidadoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="spUpPropietario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="propietario" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellido_pa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellido_ma" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="municipio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="spUpPropietarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="spUpPropietarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="spdelpropietario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="propietario" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="spdelpropietarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="spdelpropietarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="spInserPropietario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellido_ma" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellido_pa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="municipio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="spInserPropietarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="spInserPropietarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="spUpdVehiculo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clave" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="matricula" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="modelo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="marca" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="propietario" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="spUpdVehiculoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="spUpdVehiculoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="spdelvehiculo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clave" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="spdelvehiculoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="spdelvehiculoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="vwVehiculoSoapIn">
+    <wsdl:part name="parameters" element="tns:vwVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="vwVehiculoSoapOut">
+    <wsdl:part name="parameters" element="tns:vwVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="vwRptVehiculoPropietarioSoapIn">
+    <wsdl:part name="parameters" element="tns:vwRptVehiculoPropietario" />
+  </wsdl:message>
+  <wsdl:message name="vwRptVehiculoPropietarioSoapOut">
+    <wsdl:part name="parameters" element="tns:vwRptVehiculoPropietarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="spQryVehiculoSoapIn">
+    <wsdl:part name="parameters" element="tns:spQryVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="spQryVehiculoSoapOut">
+    <wsdl:part name="parameters" element="tns:spQryVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="spRptVehiculoPropietarioFiltradoSoapIn">
+    <wsdl:part name="parameters" element="tns:spRptVehiculoPropietarioFiltrado" />
+  </wsdl:message>
+  <wsdl:message name="spRptVehiculoPropietarioFiltradoSoapOut">
+    <wsdl:part name="parameters" element="tns:spRptVehiculoPropietarioFiltradoResponse" />
+  </wsdl:message>
+  <wsdl:message name="spInsVehiculoValidadoSoapIn">
+    <wsdl:part name="parameters" element="tns:spInsVehiculoValidado" />
+  </wsdl:message>
+  <wsdl:message name="spInsVehiculoValidadoSoapOut">
+    <wsdl:part name="parameters" element="tns:spInsVehiculoValidadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="spUpPropietarioSoapIn">
+    <wsdl:part name="parameters" element="tns:spUpPropietario" />
+  </wsdl:message>
+  <wsdl:message name="spUpPropietarioSoapOut">
+    <wsdl:part name="parameters" element="tns:spUpPropietarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="spdelpropietarioSoapIn">
+    <wsdl:part name="parameters" element="tns:spdelpropietario" />
+  </wsdl:message>
+  <wsdl:message name="spdelpropietarioSoapOut">
+    <wsdl:part name="parameters" element="tns:spdelpropietarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="spInserPropietarioSoapIn">
+    <wsdl:part name="parameters" element="tns:spInserPropietario" />
+  </wsdl:message>
+  <wsdl:message name="spInserPropietarioSoapOut">
+    <wsdl:part name="parameters" element="tns:spInserPropietarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="spUpdVehiculoSoapIn">
+    <wsdl:part name="parameters" element="tns:spUpdVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="spUpdVehiculoSoapOut">
+    <wsdl:part name="parameters" element="tns:spUpdVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="spdelvehiculoSoapIn">
+    <wsdl:part name="parameters" element="tns:spdelvehiculo" />
+  </wsdl:message>
+  <wsdl:message name="spdelvehiculoSoapOut">
+    <wsdl:part name="parameters" element="tns:spdelvehiculoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="vwVehiculo">
+      <wsdl:input message="tns:vwVehiculoSoapIn" />
+      <wsdl:output message="tns:vwVehiculoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vwRptVehiculoPropietario">
+      <wsdl:input message="tns:vwRptVehiculoPropietarioSoapIn" />
+      <wsdl:output message="tns:vwRptVehiculoPropietarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="spQryVehiculo">
+      <wsdl:input message="tns:spQryVehiculoSoapIn" />
+      <wsdl:output message="tns:spQryVehiculoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="spRptVehiculoPropietarioFiltrado">
+      <wsdl:input message="tns:spRptVehiculoPropietarioFiltradoSoapIn" />
+      <wsdl:output message="tns:spRptVehiculoPropietarioFiltradoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="spInsVehiculoValidado">
+      <wsdl:input message="tns:spInsVehiculoValidadoSoapIn" />
+      <wsdl:output message="tns:spInsVehiculoValidadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="spUpPropietario">
+      <wsdl:input message="tns:spUpPropietarioSoapIn" />
+      <wsdl:output message="tns:spUpPropietarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="spdelpropietario">
+      <wsdl:input message="tns:spdelpropietarioSoapIn" />
+      <wsdl:output message="tns:spdelpropietarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="spInserPropietario">
+      <wsdl:input message="tns:spInserPropietarioSoapIn" />
+      <wsdl:output message="tns:spInserPropietarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="spUpdVehiculo">
+      <wsdl:input message="tns:spUpdVehiculoSoapIn" />
+      <wsdl:output message="tns:spUpdVehiculoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="spdelvehiculo">
+      <wsdl:input message="tns:spdelvehiculoSoapIn" />
+      <wsdl:output message="tns:spdelvehiculoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vwVehiculo">
+      <soap:operation soapAction="http://tempuri.org/vwVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vwRptVehiculoPropietario">
+      <soap:operation soapAction="http://tempuri.org/vwRptVehiculoPropietario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="spQryVehiculo">
+      <soap:operation soapAction="http://tempuri.org/spQryVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="spRptVehiculoPropietarioFiltrado">
+      <soap:operation soapAction="http://tempuri.org/spRptVehiculoPropietarioFiltrado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="spInsVehiculoValidado">
+      <soap:operation soapAction="http://tempuri.org/spInsVehiculoValidado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="spUpPropietario">
+      <soap:operation soapAction="http://tempuri.org/spUpPropietario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="spdelpropietario">
+      <soap:operation soapAction="http://tempuri.org/spdelpropietario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="spInserPropietario">
+      <soap:operation soapAction="http://tempuri.org/spInserPropietario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="spUpdVehiculo">
+      <soap:operation soapAction="http://tempuri.org/spUpdVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="spdelvehiculo">
+      <soap:operation soapAction="http://tempuri.org/spdelvehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vwVehiculo">
+      <soap12:operation soapAction="http://tempuri.org/vwVehiculo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vwRptVehiculoPropietario">
+      <soap12:operation soapAction="http://tempuri.org/vwRptVehiculoPropietario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="spQryVehiculo">
+      <soap12:operation soapAction="http://tempuri.org/spQryVehiculo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="spRptVehiculoPropietarioFiltrado">
+      <soap12:operation soapAction="http://tempuri.org/spRptVehiculoPropietarioFiltrado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="spInsVehiculoValidado">
+      <soap12:operation soapAction="http://tempuri.org/spInsVehiculoValidado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="spUpPropietario">
+      <soap12:operation soapAction="http://tempuri.org/spUpPropietario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="spdelpropietario">
+      <soap12:operation soapAction="http://tempuri.org/spdelpropietario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="spInserPropietario">
+      <soap12:operation soapAction="http://tempuri.org/spInserPropietario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="spUpdVehiculo">
+      <soap12:operation soapAction="http://tempuri.org/spUpdVehiculo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="spdelvehiculo">
+      <soap12:operation soapAction="http://tempuri.org/spdelvehiculo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://localhost:20773/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://localhost:20773/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
